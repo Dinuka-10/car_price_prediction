@@ -1,4 +1,4 @@
-# 🚗 Car Price Prediction Web App
+# 🚗 Car Price Prediction 
 
 A Machine Learning-based web application that predicts the price of a car based on user input features. This project is built using **Flask (Python)** for the backend and **HTML, CSS, JavaScript** for the frontend.
 
