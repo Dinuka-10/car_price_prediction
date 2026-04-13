@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Car Price Predictor</h1>
+            <p class="subtitle">Get an estimated price for your used car</p>
+        </div>
+
+        <form id="predictionForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="km_driven">Kilometers Driven</label>
+                    <input type="number" id="km_driven" name="km_driven" required placeholder="e.g., 50000">
+                </div>
+
+                <div class="form-group">
+                    <label for="mileage">Mileage (km/ltr/kg)</label>
+                    <input type="number" step="0.1" id="mileage" name="mileage" required placeholder="e.g., 18.5">
+                </div>
+
+                <div class="form-group">
+                    <label for="engine">Engine (cc)</label>
+                    <input type="number" step="0.1" id="engine" name="engine" required placeholder="e.g., 1498">
+                </div>
+
+                <div class="form-group">
+                    <label for="max_power">Max Power (bhp)</label>
+                    <input type="number" step="0.1" id="max_power" name="max_power" required placeholder="e.g., 88">
+                </div>
+
+                <div class="form-group">
+                    <label for="seats">Seats</label>
+                    <select id="seats" name="seats">
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="5" selected>5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="14">14</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="car_age">Car Age (years)</label>
+                    <input type="number" id="car_age" name="car_age" required placeholder="e.g., 5">
+                </div>
+
+                <div class="form-group">
+                    <label for="fuel">Fuel Type</label>
+                    <select id="fuel" name="fuel">
+                        <option value="Diesel">Diesel</option>
+                        <option value="Petrol">Petrol</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="seller_type">Seller Type</label>
+                    <select id="seller_type" name="seller_type">
+                        <option value="Individual">Individual</option>
+                        <option value="Dealer">Dealer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="transmission">Transmission</label>
+                    <select id="transmission" name="transmission">
+                        <option value="Manual">Manual</option>
+                        <option value="Automatic">Automatic</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="owner">Owner</label>
+                    <select id="owner" name="owner">
+                        <option value="First Owner">First Owner</option>
+                        <option value="Second Owner">Second Owner</option>
+                        <option value="Third Owner">Third Owner</option>
+                        <option value="Test Drive Car">Test Drive Car</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="brand">Brand</label>
+                    <select id="brand" name="brand" required>
+                        <option value="">Loading brands...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="model">Model</label>
+                    <select id="model" name="model" required>
+                        <option value="">Loading models...</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" id="predictBtn">Predict Price</button>
+        </form>
+
+        <div id="result" class="result" style="display: none;"></div>
+        <div id="error" class="error" style="display: none;"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
